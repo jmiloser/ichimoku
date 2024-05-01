@@ -1,16 +1,12 @@
-# Time Series
+# Time Series Resources
 ## Konrad Banachewicz Kaggle nbs series
 [Abhishek Thakur with Konrad Banachewicz](https://www.youtube.com/@abhishekkrthakur/search?query=timeseries) Video Series  
 [Talks S2E7 (Konrad Banachewicz): Time Series Analysis - Vintage Toolkit For Modern Times](https://www.youtube.com/watch?v=cKzXOOtOXYY&list=PL98nY_tJQXZm0k0JZ2wK52JwJmQW9wqs-&index=7)  
 [Konrad's Kaggle nbs filtered on Time Series](https://www.kaggle.com/konradb/notebooks?userId=2036&sortBy=dateRun&tab=profile&searchQuery=TS) - Konrad Banachewicz | Grandmaster | Kaggle  
 ### nbs on kaggle and local
-[local nbs](nbs/KonradBanachewicz_TimeSeries)  
 [TS-0: the basics | Kaggle](https://www.kaggle.com/code/konradb/ts-0-the-basics?scriptVersionId=106894931)  
 [TS-1a: smoothing methods | Kaggle](https://www.kaggle.com/code/konradb/ts-1a-smoothing-methods?scriptVersionId=106895959)  
 [TS-1b: Prophet | Kaggle](https://www.kaggle.com/code/konradb/ts-1b-prophet), many more ...  
-## Derek Banas
-[Time Series videos](https://youtube.com/playlist?list=PLGLfVvz_LVvSVgVCsPWLr961id7kRv1wt&feature=shared)  
-[Time Series github](https://github.com/derekbanas/TimeSeriesAnalysis) and [local cloned repo](/TimeSeriesAnalysis)
 
 ## Graph NNs for time series
 [Awesome Graph Neural Networks for Time Series Analysis (GNN4TS)](https://github.com/KimMeen/Awesome-GNN4TS)  
@@ -21,7 +17,7 @@ Paper [A Survey on Graph Neural Networks for Time Series: Forecasting, Classific
 - NeuralProphet is an easy to learn framework for interpretable time series forecasting. NeuralProphet is built on PyTorch and combines Neural Networks and traditional time-series algorithms, inspired by Facebook Prophet and AR-Net.
 - NeuralProphet is best suited for time series data that is of higher-frequency (sub-daily) and longer duration (at least two full periods/years).
 ### Examples
-JPX Comp with Regressors and Future dataframe build: [Kaggle nb](https://www.kaggle.com/code/paulorzp/jpx-prophet-forecasting-rolling-regression), [local copy](nbs/general/jpx-prophet-forecasting-rolling-regression.ipynb)  
+JPX Comp with Regressors and Future dataframe build: [Kaggle nb](https://www.kaggle.com/code/paulorzp/jpx-prophet-forecasting-rolling-regression) 
 
 ## TSAI
 State-of-the-art Deep Learning library for Time Series and Sequences.  
@@ -49,7 +45,6 @@ yfinance - [docs](https://aroussi.com/post/python-yahoo-finance), [github link](
 
 ## Resources
 Kaggle discussion summarizing Stock, Timeseries resources [Kaggle discussion](https://www.kaggle.com/competitions/optiver-trading-at-the-close/discussion/441966), 
-[local copy](resources/Timeseries_Stocks_Resources_Kaggle.mht)  
 
 ## Datasets
 ### NIFTY-50 Stock Market Data NSE(National Stock Exchange - India) (2000 - 2021)
@@ -65,7 +60,6 @@ Stock price data of the fifty stocks in NIFTY-50 index from NSE India
 [2023 Optiver](https://www.kaggle.com/competitions/optiver-trading-at-the-close)  
 [2021-22 Optiver](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/leaderboard)
 ## Kaggle Notebooks
-[Download Sector ETFs](https://www.kaggle.com/code/guillemservera/downloading-sectors-etfs-with-yfinance)  
 [Stock Analysis + Predictions, LSTM](https://www.kaggle.com/code/faressayah/stock-market-analysis-prediction-using-lstm)  
 
 # General Notes
