@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "ichimoku"
+version = "0.5.0"
+description = ""
+authors = ["Jim Miloser <jmiloser@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+fastai = "^2.7.13"
+jupyterlab = "^4.0.10"
+neuralprophet = {extras = ["live"], version = "^0.6.2"}
+nbformat = "^5.9.2"
+ipywidgets = "^8.1.1"
+seaborn = {extras = ["stats"], version = "^0.13.1"}
+tensorflow = "2.13"
+kaggle = "^1.6.3"
+pytest-html = "^4.1.1"
+allure-pytest = "^2.13.2"
+nbqa = "^1.7.1"
+pre-commit = "^3.6.1"
+kaleido = "0.2.1"
+
+[tool.poetry.group.macos.dependencies]
+tensorflow-macos = "2.13"
+tensorflow-metal = "^1.1.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.0.0"
+plotly = "^5.18.0"
+yfinance = {extras = ["optional"], version = "^0.2.36"}
+black = "^24.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+markers = [
+    "plot: plotting",
+]
+addopts = "-v --html=./tests/report.html --alluredir=./tests/allure-report"
+
+filterwarnings = [
+    "ignore::FutureWarning:yfinance.base",
+]
+
+[tool.black]
+line-length = 100
+
+[tool.pre_commit]
+hooks = [
+    "black",
+]

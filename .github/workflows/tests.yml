@@ -1,0 +1,34 @@
+name: run tests
+
+on:
+    push:
+        branches-ignore:
+            - none
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    test:
+      runs-on: ubuntu-latest
+  
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+  
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+  
+      - name: Install project dependencies
+        run: poetry install --only test --no-root
+  
+      - name: Run Black Formatter
+        run: poetry run black --check src/ tests/
+
+      - name: Update pyproject.toml
+        run: |
+          sed -i 's/^addopts.*/addopts = "-v"/' pyproject.toml
+
+      - name: Run Pytest
+        run: poetry run pytest -m "not plot"
