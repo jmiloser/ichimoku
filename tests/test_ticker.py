@@ -48,10 +48,10 @@ def test_ticker_passed_as_list_or_str(data_path):
     ticker_list_test.download_to_csv()
     assert Path(f"{data_path}/SPY.csv").is_file()
 
-    ticker_list_test = Ticker(data_path, "MSFT bNkU")
+    ticker_list_test = Ticker(data_path, "MSFT nVda")
     ticker_list_test.download_to_csv()
     assert Path(f"{data_path}/MSFT.csv").is_file()
-    assert Path(f"{data_path}/BNKU.csv").is_file()
+    assert Path(f"{data_path}/NVDA.csv").is_file()
 
     ticker_list_test = Ticker(data_path, "tQQQ")
     ticker_list_test.download_to_csv()
