@@ -58,6 +58,7 @@ def test_ticker_passed_as_list_or_str(data_path):
     assert Path(f"{data_path}/TQQQ.csv").is_file()
 
 
+@pytest.mark.skip
 def test_add_to_existing_ticker(data_path, ticker, current_datetime):
     # download 10 days of history 10 days before current date
     start = current_datetime - timedelta(days=20)
@@ -71,6 +72,28 @@ def test_add_to_existing_ticker(data_path, ticker, current_datetime):
     _ticker.update()
     _ticker_dict = _ticker.ticker_to_df()
     assert _ticker_dict[ticker].Date.iloc[-1] > pd.to_datetime(end.date())
+
+
+def test_add_to_existing_ticker(data_path, ticker, current_datetime):
+    # download 10 days of history 10 days before current date
+    start = current_datetime - timedelta(days=20)
+    end = current_datetime - timedelta(days=10)
+    _ticker = Ticker(data_path, ticker, start, end)
+    _ticker.download_to_csv()
+    _ticker_dict = _ticker.ticker_to_df()
+
+    # Ensure dates are timezone-naive
+    _ticker_dict[ticker]["Date"] = pd.to_datetime(_ticker_dict[ticker]["Date"]).dt.tz_localize(None)
+    end_naive = pd.to_datetime(end.date()).tz_localize(None)
+    assert _ticker_dict[ticker].Date.iloc[-1] <= end_naive
+
+    # update ticker to current day without downloading
+    _ticker.update()
+    _ticker_dict = _ticker.ticker_to_df()
+    _ticker_dict[ticker]["Date"] = pd.to_datetime(_ticker_dict[ticker]["Date"]).dt.tz_localize(None)
+    current_datetime_naive = pd.to_datetime(current_datetime).tz_localize(None)
+    assert _ticker_dict[ticker].Date.iloc[-1] > end_naive
+    assert _ticker_dict[ticker].Date.iloc[-1] <= current_datetime_naive
 
 
 def test_flush_existing_data(data_path, ticker, current_datetime):
