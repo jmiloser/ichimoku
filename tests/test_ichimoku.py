@@ -23,7 +23,7 @@ def test_ichimoku_cols_to_tickers(data_path, tickers, ichimoku_columns):
 
 @pytest.mark.plot
 def test_ichimoku_plot(data_path, tickers):
-    ichimoku = Ichimoku(data_path, tickers, period="3y")
+    ichimoku = Ichimoku(data_path, tickers, period="2y")
     dict_of_tickers = ichimoku.add_features(ichimoku.tickers)
     for ticker in ichimoku.tickers:
         ichimoku.plot_ichimoku(dict_of_tickers[ticker], ticker)

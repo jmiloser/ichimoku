@@ -49,7 +49,12 @@ class Ichimoku:
                 dict_of_tickers[ticker] = self._calculate_features(df)
         else:
             for ticker in tickers:
-                df = yf.download(tickers=ticker, period=self.period, interval=self.interval)
+                df = yf.download(
+                    tickers=ticker,
+                    period=self.period,
+                    interval=self.interval,
+                    multi_level_index=False,
+                )
                 dict_of_tickers[ticker] = self._calculate_features(df)
         return dict_of_tickers
 
