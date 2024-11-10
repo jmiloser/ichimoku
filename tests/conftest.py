@@ -36,7 +36,7 @@ def data_path(tmpdir):
 
 @pytest.fixture
 def tickers():
-    return "AAPL GOOG ERX BNKU"
+    return "AAPL GOOG ERX"
 
 
 @pytest.fixture

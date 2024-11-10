@@ -40,7 +40,11 @@ class Ticker:
         for ticker in self.tickers:
             last_date = _tickers[ticker].Date.iloc[-1].date()
             data = yf.download(
-                ticker, last_date + timedelta(days=1), TODAY, group_by="ticker"
+                ticker,
+                last_date + timedelta(days=1),
+                TODAY,
+                group_by="ticker",
+                multi_level_index=False,
             ).reset_index()
             _existing_ticker = pd.read_csv(f"{self.path}/{ticker}.csv", parse_dates=["Date"])
             data = pd.concat([_existing_ticker, data], ignore_index=True)
