@@ -26,7 +26,7 @@ def test_save_read_ticker(data_path, tickers, start_datetime, current_datetime):
         file_path = data_path / f"{ticker}.csv"
         assert file_path.is_file()
         assert len(tickers_dict[ticker]) > 0
-        tickers_dict[ticker]['Date'] = tickers_dict[ticker]['Date'].dt.tz_localize(None)
+        tickers_dict[ticker]["Date"] = tickers_dict[ticker]["Date"].dt.tz_localize(None)
         assert tickers_dict[ticker].Date.dtype == "datetime64[ns]"
 
 
@@ -37,7 +37,7 @@ def test_max_date_is_most_recent_trading_date(
     _tickers.download_to_csv()
     tickers_dict = _tickers.ticker_to_df()
     for ticker in tickers.split(" "):
-        tickers_dict[ticker]['Date'] = tickers_dict[ticker]['Date'].dt.tz_localize(None)
+        tickers_dict[ticker]["Date"] = tickers_dict[ticker]["Date"].dt.tz_localize(None)
         assert tickers_dict[ticker].Date.iloc[-1] <= pd.to_datetime(current_datetime.date())
 
 
