@@ -1,3 +1,6 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jmiloser_ichimoku&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jmiloser_ichimoku)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jmiloser_ichimoku&metric=coverage)](https://sonarcloud.io/summary/new_code?id=jmiloser_ichimoku)
+
 # Time Series Resources
 ## Konrad Banachewicz Kaggle nbs series
 [Abhishek Thakur with Konrad Banachewicz](https://www.youtube.com/@abhishekkrthakur/search?query=timeseries) Video Series  
